@@ -34,7 +34,7 @@ public class AccountDaoImpl implements IAccountDao{
 
     @Override
     public int delete(int id) {
-        return jdbcTemplate.update("DELETE from TABLE account where id=?",id);
+        return jdbcTemplate.update("DELETE from account where id=?",id);
     }
 
     @Override

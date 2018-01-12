@@ -1,0 +1,28 @@
+hello:
+  chenchao:
+    name: Gmle7
+    age: 22
+
+profiles:
+  env:
+    name: local
+    uuid: ${random.uuid}
+    value: ${random.value}
+    max: ${random.int}
+  env2:
+    name: dev
+    uuid: ${random.uuid}
+    value: ${random.value}
+    max: ${random.long}
+
+spring:
+  datasource:
+      driver-class-name: com.mysql.jdbc.Driver
+      url: jdbc:mysql://115.159.79.252:3306/test?useUnicode=true&characterEncoding=utf8&characterSetResults=utf8
+      username: root
+      password: cccc8857214572
+
+jpa:
+    hibernate:
+    ddl-auto: update  # 第一次简表create  后面用update
+    show-sql: true

@@ -1,6 +1,6 @@
 hello:
   chenchao:
-    name: Gmle7
+    name: This is a Spring Boot Project
     age: 22
 
 profiles:

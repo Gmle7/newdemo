@@ -15,6 +15,11 @@ public class NewDemoApplication {
 		SpringApplication.run(NewDemoApplication.class, args);
 	}
 
+	/**
+	 * 打印所有自动注入的bean
+	 * @param ctx
+	 * @return
+	 */
 	@Bean
 	public CommandLineRunner commandLineRunner(ApplicationContext ctx){
 		return args->{

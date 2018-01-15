@@ -1,6 +1,6 @@
 package com.chenchao.controller;
 
-import com.chenchao.bean.Account;
+import com.chenchao.bean.AccountEntity;
 import com.chenchao.dao.AccountDao;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -68,17 +68,17 @@ public class AccountController {
     @Autowired
     AccountDao accountDao;
     @RequestMapping(value = "/list",method = RequestMethod.GET)
-    public List<Account> getAccounts(){
+    public List<AccountEntity> getAccounts(){
         return accountDao.findAll();
     }
 
     @RequestMapping(value = "/{id}",method = RequestMethod.GET)
-    public  Account getAccountById(@PathVariable("id") int id){
+    public  AccountEntity getAccountById(@PathVariable("id") int id){
         return accountDao.findOne(id);
     }
 
-    @RequestMapping(value = "/{id}",method = RequestMethod.DELETE)
-    public String deleteAccount(@PathVariable(value = "id")int id){
+    @RequestMapping(value = "",method = RequestMethod.DELETE)
+    public String deleteAccount(@RequestParam(value = "id",required = true)int id){
         try {
             accountDao.delete(id);
         }catch (Exception e){
@@ -87,10 +87,10 @@ public class AccountController {
         return "success";
     }
 
-    @RequestMapping(value = "/{id}",method = RequestMethod.PUT)
-    public  String updateAccount(@PathVariable("id")int id , @RequestParam(value = "name",required = true)String name,
+    @RequestMapping(value = "",method = RequestMethod.PUT)
+    public  String updateAccount(@RequestParam(value = "id",required = true)int id , @RequestParam(value = "name",required = true)String name,
                                  @RequestParam(value = "money" ,required = true)double money){
-        Account account=new Account();
+        AccountEntity account=new AccountEntity();
         account.setMoney(money);
         account.setName(name);
         account.setId(id);
@@ -100,7 +100,7 @@ public class AccountController {
 
     @RequestMapping(value = "",method = RequestMethod.POST)
     public  String postAccount(@RequestParam(value = "name")String name, @RequestParam(value = "money" )double money){
-        Account account=new Account();
+        AccountEntity account=new AccountEntity();
         account.setMoney(money);
         account.setName(name);
         account=accountDao.save(account);

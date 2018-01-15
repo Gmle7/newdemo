@@ -1,6 +1,6 @@
 package com.chenchao.dao;
 
-import com.chenchao.bean.Account;
+import com.chenchao.bean.AccountEntity;
 
 import java.util.List;
 
@@ -8,13 +8,13 @@ import java.util.List;
  * Created by T005 on 2018/1/8.
  */
 public interface IAccountDao{
-    int add(Account account);
+    int add(AccountEntity account);
 
-    int update(Account account);
+    int update(AccountEntity account);
 
     int delete(int id);
 
-    Account findAccountById(int id);
+    AccountEntity findAccountById(int id);
 
-    List<Account> findAccountList();
+    List<AccountEntity> findAccountList();
 }

@@ -1,6 +1,6 @@
 package com.chenchao.service;
 
-import com.chenchao.bean.Account;
+import com.chenchao.bean.AccountEntity;
 
 import java.util.List;
 
@@ -10,14 +10,14 @@ import java.util.List;
 public interface IAccountService {
 
 
-    int add(Account account);
+    int add(AccountEntity account);
 
-    int update(Account account);
+    int update(AccountEntity account);
 
     int delete(int id);
 
-    Account findAccountById(int id);
+    AccountEntity findAccountById(int id);
 
-    List<Account> findAccountList();
+    List<AccountEntity> findAccountList();
 
 }

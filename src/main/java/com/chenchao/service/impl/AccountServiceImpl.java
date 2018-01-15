@@ -1,6 +1,6 @@
 package com.chenchao.service.impl;
 
-import com.chenchao.bean.Account;
+import com.chenchao.bean.AccountEntity;
 import com.chenchao.dao.IAccountDao;
 import com.chenchao.service.IAccountService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,12 +16,12 @@ public class AccountServiceImpl implements IAccountService {
     @Autowired
     IAccountDao accountDao;
     @Override
-    public int add(Account account) {
+    public int add(AccountEntity account) {
         return accountDao.add(account);
     }
 
     @Override
-    public int update(Account account) {
+    public int update(AccountEntity account) {
         return accountDao.update(account);
     }
 
@@ -31,12 +31,12 @@ public class AccountServiceImpl implements IAccountService {
     }
 
     @Override
-    public Account findAccountById(int id) {
+    public AccountEntity findAccountById(int id) {
         return accountDao.findAccountById(id);
     }
 
     @Override
-    public List<Account> findAccountList() {
+    public List<AccountEntity> findAccountList() {
         return accountDao.findAccountList();
     }
 }

@@ -9,7 +9,6 @@ import java.util.List;
  */
 public interface IAccountService {
 
-
     int add(AccountEntity account);
 
     int update(AccountEntity account);

@@ -6,9 +6,7 @@
     <session-factory>
         <!-- Database connection settings -->
         <property name="connection.driver_class">com.mysql.jdbc.Driver</property>
-        <property name="connection.url">jdbc:mysql://115.159.79.252/test</property>
-        <property name="connection.username">root</property>
-        <property name="connection.password">cccc8857214572</property>
+        <property name="connection.url">jdbc:mysql://115.159.79.252:3306/taotao</property>
         <!-- JDBC connection pool (use the built-in) -->
         <!--
         <property name="connection.pool_size">1</property>
@@ -20,6 +18,17 @@
 
         <!-- Echo all executed SQL to stdout -->
         <property name="show_sql">true</property>
+        <mapping class="com.chenchao.bean.TbContentBean"/>
+        <mapping class="com.chenchao.bean.TbContentCategoryBean"/>
+        <mapping class="com.chenchao.bean.TbItemBean"/>
+        <mapping class="com.chenchao.bean.TbItemCatBean"/>
+        <mapping class="com.chenchao.bean.TbItemDescBean"/>
+        <mapping class="com.chenchao.bean.TbItemParamBean"/>
+        <mapping class="com.chenchao.bean.TbItemParamItemBean"/>
+        <mapping class="com.chenchao.bean.TbOrderBean"/>
+        <mapping class="com.chenchao.bean.TbOrderItemBean"/>
+        <mapping class="com.chenchao.bean.TbOrderShippingBean"/>
+        <mapping class="com.chenchao.bean.TbUserBean"/>
         <!-- Drop and re-create the database schema on startup -->
         <!--
         <property name="hbm2ddl.auto">update</property>
